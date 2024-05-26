@@ -6,7 +6,7 @@
       "description": "API Documentation for Batik Detection Application"
     },
     "paths": {
-      "/api/register": {
+      "/user/register": {
         "post": {
           "summary": "User Registration",
           "description": "Registers a new user.",
@@ -59,7 +59,7 @@
           }
         }
       },
-      "/api/login": {
+      "/user/login": {
         "post": {
           "summary": "User Login",
           "description": "Logs in a user.",
@@ -108,7 +108,7 @@
           }
         }
       },
-      "/api/logout": {
+      "/user/logout": {
         "post": {
           "summary": "User Logout",
           "description": "Logs out a user. Requires authentication token.",
@@ -143,7 +143,7 @@
           }
         }
       },
-      "/api/scan": {
+      "/user/scan": {
         "post": {
           "summary": "Scan Batik",
           "description": "Scans a batik image to detect the type and origin of the batik.",
@@ -208,7 +208,7 @@
           }
         }
       },
-      "/api/upload": {
+      "/user/upload": {
         "post": {
           "summary": "Upload Batik Photo",
           "description": "Uploads a batik photo to be stored in the system and detects the type and origin of the batik.",
@@ -281,7 +281,7 @@
           }
         }
       },
-      "/api/batik": {
+      "/user/batik": {
         "get": {
           "summary": "List Batik",
           "description": "Retrieves a list of all batik stored in the system.",
