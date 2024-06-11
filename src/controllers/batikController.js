@@ -5,6 +5,7 @@ const getAllBatiks = async (req, res) => {
     const batiks = await batikService.getAllBatiks();
     res.json(batiks);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: 'Failed to fetch batiks' });
   }
 };

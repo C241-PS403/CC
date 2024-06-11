@@ -4,6 +4,7 @@ const prisma = new PrismaClient();
 const getAllBatiks = async () => {
   return await prisma.batik.findMany({
     select: {
+      batik_id: true,
       image: true, 
       batik_name: true,
       batik_history: true,
