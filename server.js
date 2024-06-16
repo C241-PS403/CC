@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use('/api', batikRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const HOSTNAME = '0.0.0.0';
 app.listen(PORT, HOSTNAME, () => {
   console.log(`Server is running on port ${PORT}`);

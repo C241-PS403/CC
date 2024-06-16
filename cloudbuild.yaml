@@ -1,0 +1,17 @@
+steps:
+# - name: node:18.17.0
+#   entrypoint: npm
+#   args: ["install", "--force"]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/capstonebatiku/batik-backend', '.']
+ # Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/capstonebatiku/batik-backend']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'services','update', 'batik-backend', '--image', 'gcr.io/capstonebatiku/batik-backend', '--region', 
+'asia-southeast2']
+images:
+- gcr.io/capstonebatiku/batik-backend 
+timeout: "1600s"

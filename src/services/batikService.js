@@ -7,7 +7,7 @@ const getAllBatiks = async () => {
       batik_id: true,
       image: true, 
       batik_name: true,
-      batik_history: true,
+      batik_meaning: true,
     },
   });
 };
