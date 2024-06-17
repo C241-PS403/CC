@@ -7,7 +7,7 @@ const getAllBatiks = async () => {
       batik_id: true,
       image: true, 
       batik_name: true,
-      batik_meaning: true,
+      batik_history: true,
     },
   });
 };
@@ -25,7 +25,21 @@ const getBatikById = async (id) => {
   });
 };
 
+const getBatikByName = async (name) => {
+  return await prisma.batik.findFirst({
+    where: { batik_name: name },
+    select: {
+      image: true,
+      batik_name: true,
+      batik_origin: true,
+      batik_meaning: true,
+      batik_history: true,
+    },
+  });
+};
+
 module.exports = {
   getAllBatiks,
   getBatikById,
+  getBatikByName,
 };
